@@ -18,18 +18,7 @@ print "\n\n\nit has begun"
 
 a= []
 
-#a = [[0] * n for i in range(n)]
-#for i in range(n):
- #   for j in range(n):
-  #         a[i][j] = 0
-   #     elif i > j:
-    #        a[i][j] = 2
-     #   else:
-      #      a[i][j] = 1
-#for row in a:
- #  print(' '.join([str(elem) for elem in row]))
-
-def m_b(place):
+def m_b(place):                     #generating the field
     for i in range(n):
         place.append(["O"] * n)
 
@@ -39,11 +28,11 @@ print "so here's your goal \n you are at position 1,1 \n you have to move to pos
 print "\n \n simple enough right?"
 
 print "\n choose r for right l for left, d for down u for up \n\n enter your input"
-x= raw_input()
+x= raw_input()          #this input will not matter
 print "\n wait wait wait.... i think you should see something first"
 del x
 
-h= n*1.5
+h= n*1.5                #health calculator is just 1.5 into diagonal
 l=h;
 
 def health( ):
