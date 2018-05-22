@@ -1,3 +1,16 @@
+from os import system, name
+from time import sleep
+
+def clear():
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
+
+
 print "hello player 1\n\n\n\n"
 
 
@@ -8,17 +21,24 @@ print "\n\nyour stage is set with", n, " x", n, "output"
 print "\n\n\n press y when ready, press anything else to save yourself"
 
 test = raw_input()
+
+clear()
 if test == 'y':
     print "your funeral"
 else:
     print "i guess i scared you :-( sorry, but bye bye "
     exit()
 
-print "\n\n\nit has begun"
+sleep(4)
+
+print "\n\n\nit has begun...."
+
+sleep(4)
+
+clear()
 
 a= []
-
-def m_b(place):                     #generating the field
+def m_b(place):
     for i in range(n):
         place.append(["O"] * n)
 
@@ -28,12 +48,19 @@ print "so here's your goal \n you are at position 1,1 \n you have to move to pos
 print "\n \n simple enough right?"
 
 print "\n choose r for right l for left, d for down u for up \n\n enter your input"
-x= raw_input()          #this input will not matter
+x= raw_input()
+
+clear()
+
 print "\n wait wait wait.... i think you should see something first"
 del x
 
-h= n*1.5                #health calculator is just 1.5 into diagonal
-l=h;
+sleep(4)
+
+clear()
+
+h= n*1.5            #calculating health which is just diagonal into 1.5
+l=h;                #maximum health
 
 def health( ):
     print "\n\n\n***********************"
@@ -76,6 +103,7 @@ try:
             go = False
         else:
             print ("do it again idiot")
+        clear()
         a[prev_char_y][prev_char_x] = "O"
         a[char_y][char_x] = "X"
         prev_char_y = char_y
@@ -88,8 +116,8 @@ try:
             health()
             go = False
 except IndexError:
-    print("That's out of range, you just hit a wall")
-    h= h - 0.1;
+    print("That's out of range, you just hit a wall, full of spikes, you dead")
+    h= h - h;
     health()
     char_y = prev_char_y
     char_x = prev_char_x
